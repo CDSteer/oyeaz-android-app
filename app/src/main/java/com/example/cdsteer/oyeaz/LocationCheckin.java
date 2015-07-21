@@ -63,7 +63,6 @@ public class LocationCheckin extends Service {
 
 
     private class LongOperation extends AsyncTask<String, Void, String> {
-
         @Override
         protected String doInBackground(String... params) {
             try {
@@ -78,7 +77,6 @@ public class LocationCheckin extends Service {
 
         @Override
         protected void onPostExecute(String result) {
-
         }
 
         @Override
@@ -96,6 +94,10 @@ public class LocationCheckin extends Service {
 
             double longitude = location.getLongitude();
             double latitude = location.getLatitude();
+
+            Log.v("longitude", String.valueOf(longitude));
+            Log.v("longitude", String.valueOf(latitude));
+
             String url = "https://oyeaz-app.herokuapp.com/users/1/locations/new?latitude="+latitude+"&longitude="+longitude;
 
             try {
